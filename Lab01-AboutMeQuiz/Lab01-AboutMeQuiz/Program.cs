@@ -34,7 +34,7 @@ namespace Lab01_AboutMeQuiz
                 int idx = i;
                 bool gotItRight = this.CheckAnswer(userInput, idx);
                 this.score[idx] = gotItRight;
-                if (!gotItRight) this.PrintRightAnswer(idx, gotItRight);
+                this.PrintRightAnswer(idx, gotItRight);
             }
         }
 
