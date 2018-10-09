@@ -8,15 +8,23 @@ namespace Lab01_AboutMeQuiz
         static void Main(string[] args)
         {
             Program game = new Program();
+
+            // populate questions and answers
             game.questions = new string[6] { "In which city was I born?", "What's my favorite ice cream store in Capitol Hill?", "Which instrument did I play while growing up?", "Which sport did I play?", "Which weapon did I fence?", "Guess a number between 1-100. What's my favorite number?" };
             game.answers = new string[6] { "Flushing, NY", "Salt & Straw", "Flute", "Fencing", "Epee", "7" };
+            // instantiate score array
             game.score = new bool[6];
+
+            // print questions and answers in console
             game.AskQuestions();
+
+            // calculate right answers
             int totalCorrect = game.CalculateRightAnswers();
             PrintScore(totalCorrect);
             Console.ReadLine();
         }
 
+        // fields belong to each instance of Program (game)
         private string[] questions;
 
         private string[] answers;
@@ -42,7 +50,7 @@ namespace Lab01_AboutMeQuiz
 
         public bool CheckAnswer(string userInput, int idx)
         {
-            // this is to handle answer checking for only question 6
+            // This is to handle answer checking for only question 6. I anticipate "Input string was not in correct format" printed to the console.
             if (idx == 5)
             {
                 try
