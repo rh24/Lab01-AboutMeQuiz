@@ -17,7 +17,7 @@ namespace Lab01_AboutMeQuiz
 
         private string[] answers;
 
-        private int[] score;
+        private bool[] score;
 
         public void AskQuestions()
         {
@@ -28,13 +28,14 @@ namespace Lab01_AboutMeQuiz
             {
                 Console.WriteLine(questions[i]);
                 string userInput = Console.ReadLine();
-                CheckAnswer()
+                int idx = i;
+                this.CheckAnswer(userInput, idx);
             }
         }
 
-        static string CheckAnswer(string userInput, int idx)
+        public bool CheckAnswer(string userInput, int idx)
         {
-
+            return string.Equals(this.answers[idx], userInput, StringComparison.CurrentCultureIgnoreCase);
         }
 
         public int CalculateScore()
