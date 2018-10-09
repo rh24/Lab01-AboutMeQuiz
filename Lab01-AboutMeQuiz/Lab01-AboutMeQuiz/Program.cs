@@ -14,6 +14,7 @@ namespace Lab01_AboutMeQuiz
             game.AskQuestions();
             int totalCorrect = game.CalculateRightAnswers();
             PrintScore(totalCorrect);
+            Console.ReadLine();
         }
 
         private string[] questions;
@@ -47,7 +48,7 @@ namespace Lab01_AboutMeQuiz
         {
             if (!gotItRight)
             {
-                Console.WriteLine(this.answers[idx]);
+                Console.WriteLine("Wrong! ", this.answers[idx]);
             }
             else
             {
