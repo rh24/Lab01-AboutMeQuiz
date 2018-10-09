@@ -24,11 +24,12 @@ namespace Lab01_AboutMeQuiz
             for (int i = 0; i < questions.Length; i++)
             {
                 Console.WriteLine(questions[i]);
-                Console.ReadLine();
+                string userInput = Console.ReadLine();
+
             }
         }
 
-        public string CheckAnswer()
+        static string CheckAnswer()
         {
 
         }
