@@ -1,4 +1,5 @@
 ﻿using System;
+// I want to find the way to write WriteLine() instead of Console.WriteLine() every time.
 
 namespace Lab01_AboutMeQuiz
 {
@@ -18,10 +19,18 @@ namespace Lab01_AboutMeQuiz
 
         public void AskQuestions()
         {
-            for (int i = 0; i < this.questions.Length; i++)
-            {
+            string[] questions = this.questions;
 
+            for (int i = 0; i < questions.Length; i++)
+            {
+                Console.WriteLine(questions[i]);
+                Console.ReadLine();
             }
+        }
+
+        public string CheckAnswer()
+        {
+
         }
     }
 }
