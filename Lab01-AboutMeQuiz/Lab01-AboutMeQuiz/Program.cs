@@ -8,9 +8,9 @@ namespace Lab01_AboutMeQuiz
         static void Main(string[] args)
         {
             Program game = new Program();
-            game.questions = new string[5] { "In which city was I born?", "What's my favorite ice cream store in Capitol Hill?", "Which instrument did I play while growing up?", "Which sport did I play?", "Which weapon did I fence?" };
-            game.answers = new string[5] { "Flushing, NY", "Salt & Straw", "Flute", "Fencing", "Epee" };
-            game.score = new bool[5];
+            game.questions = new string[6] { "In which city was I born?", "What's my favorite ice cream store in Capitol Hill?", "Which instrument did I play while growing up?", "Which sport did I play?", "Which weapon did I fence?", "Guess a number between 1-100. What's my favorite number?" };
+            game.answers = new string[6] { "Flushing, NY", "Salt & Straw", "Flute", "Fencing", "Epee", "7" };
+            game.score = new bool[6];
             game.AskQuestions();
             int totalCorrect = game.CalculateRightAnswers();
             PrintScore(totalCorrect);
@@ -42,6 +42,19 @@ namespace Lab01_AboutMeQuiz
 
         public bool CheckAnswer(string userInput, int idx)
         {
+            // this is to handle answer checking for only question 6
+            if (idx == 5)
+            {
+                try
+                {
+                    int guess = int.Parse(userInput);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+
             return String.Equals(this.answers[idx], userInput, StringComparison.CurrentCultureIgnoreCase);
         }
 
@@ -75,7 +88,7 @@ namespace Lab01_AboutMeQuiz
 
         static string PrintScore(int correct)
         {
-           Console.WriteLine($"You got a {correct.ToString()}/5. Thanks for playing!");
+           Console.WriteLine($"You got a {correct.ToString()}/6. Thanks for playing!");
            return "Game Over";
         }
     }
