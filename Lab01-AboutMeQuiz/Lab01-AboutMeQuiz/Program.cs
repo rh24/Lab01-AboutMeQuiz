@@ -12,7 +12,8 @@ namespace Lab01_AboutMeQuiz
             game.answers = new string[5] { "Flushing, NY", "Salt & Straw", "Flute", "Fencing", "Epee" };
             game.score = new bool[5];
             game.AskQuestions();
-            game.CalculateRightAnswers();
+            int totalCorrect = game.CalculateRightAnswers();
+            PrintScore(totalCorrect);
         }
 
         private string[] questions;
@@ -31,13 +32,27 @@ namespace Lab01_AboutMeQuiz
                 Console.WriteLine(questions[i]);
                 string userInput = Console.ReadLine();
                 int idx = i;
-                this.score[idx] = this.CheckAnswer(userInput, idx);
+                bool gotItRight = this.CheckAnswer(userInput, idx);
+                this.score[idx] = gotItRight;
+                if (!gotItRight) this.PrintRightAnswer(idx, gotItRight);
             }
         }
 
         public bool CheckAnswer(string userInput, int idx)
         {
             return String.Equals(this.answers[idx], userInput, StringComparison.CurrentCultureIgnoreCase);
+        }
+
+        public void PrintRightAnswer(int idx, bool gotItRight)
+        {
+            if (!gotItRight)
+            {
+                Console.WriteLine(this.answers[idx]);
+            }
+            else
+            {
+                Console.WriteLine("Correct!");
+            }
         }
 
         public int CalculateRightAnswers()
@@ -58,7 +73,6 @@ namespace Lab01_AboutMeQuiz
 
         static string PrintScore(int correct)
         {
-
            Console.WriteLine($"You got a {0}/5. Thanks for playing!", correct.ToString());
            return "Game Over";
         }
