@@ -11,7 +11,8 @@ namespace Lab01_AboutMeQuiz
             game.questions = new string[5] { "In which city was I born?", "What's my favorite ice cream store in Capitol Hill?", "Which instrument did I play while growing up?", "Which sport did I play?", "Which weapon did I fence?" };
             game.answers = new string[5] { "Flushing, NY", "Salt & Straw", "Flute", "Fencing", "Epee" };
             game.score = new bool[5];
-
+            game.AskQuestions();
+            game.CalculateRightAnswers();
         }
 
         private string[] questions;
@@ -36,12 +37,30 @@ namespace Lab01_AboutMeQuiz
 
         public bool CheckAnswer(string userInput, int idx)
         {
-            return string.Equals(this.answers[idx], userInput, StringComparison.CurrentCultureIgnoreCase);
+            return String.Equals(this.answers[idx], userInput, StringComparison.CurrentCultureIgnoreCase);
         }
 
-        public int CalculateScore()
+        public int CalculateRightAnswers()
+        {
+            bool[] rightOrWrong = this.score;
+            int correct = 0;
+
+            for (int i = 0; i < this.score.Length; i++)
+            {
+                if (rightOrWrong[i])
+                {
+                    correct++;
+                }
+            }
+
+            return correct;
+        }
+
+        static string PrintScore(int correct)
         {
 
+           Console.WriteLine($"You got a {0}/5. Thanks for playing!", correct.ToString());
+           return "Game Over";
         }
     }
 }
