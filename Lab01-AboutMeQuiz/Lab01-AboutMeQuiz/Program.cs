@@ -17,19 +17,27 @@ namespace Lab01_AboutMeQuiz
 
         private string[] answers;
 
+        private int[] score;
+
         public void AskQuestions()
         {
             string[] questions = this.questions;
+            string[] answers = this.answers;
 
             for (int i = 0; i < questions.Length; i++)
             {
                 Console.WriteLine(questions[i]);
                 string userInput = Console.ReadLine();
-
+                CheckAnswer()
             }
         }
 
-        static string CheckAnswer()
+        static string CheckAnswer(string userInput, int idx)
+        {
+
+        }
+
+        public int CalculateScore()
         {
 
         }
