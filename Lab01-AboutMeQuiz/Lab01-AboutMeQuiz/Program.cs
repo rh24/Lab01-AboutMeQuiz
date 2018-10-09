@@ -37,6 +37,7 @@ namespace Lab01_AboutMeQuiz
                 this.score[idx] = gotItRight;
                 this.PrintRightAnswer(idx, gotItRight);
             }
+
         }
 
         public bool CheckAnswer(string userInput, int idx)
@@ -74,7 +75,7 @@ namespace Lab01_AboutMeQuiz
 
         static string PrintScore(int correct)
         {
-           Console.WriteLine($"You got a {0}/5. Thanks for playing!", correct.ToString());
+           Console.WriteLine($"You got a {correct.ToString()}/5. Thanks for playing!");
            return "Game Over";
         }
     }
