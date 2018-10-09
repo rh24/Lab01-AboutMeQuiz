@@ -63,6 +63,7 @@ namespace Lab01_AboutMeQuiz
                 }
             }
 
+            // case insensitive string comparison that returns a boolean
             return String.Equals(this.answers[idx], userInput, StringComparison.CurrentCultureIgnoreCase);
         }
 
