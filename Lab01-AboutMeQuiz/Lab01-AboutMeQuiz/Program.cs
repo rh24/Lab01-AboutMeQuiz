@@ -9,15 +9,19 @@ namespace Lab01_AboutMeQuiz
             Program game = new Program();
             game.questions = new string[5] { "In which city was I born?", "What's my favorite ice cream store in Capitol Hill?", "Which instrument did I play while growing up?", "Which sport did I play?", "Which weapon did I fence?" };
             game.answers = new string[5] { "Flushing, NY", "Salt & Straw", "Flute", "Fencing", "Epee" };
+
         }
 
         private string[] questions;
 
         private string[] answers;
 
-        static string[] PopulateQuestionsArray()
+        public void AskQuestions()
         {
+            for (int i = 0; i < this.questions.Length; i++)
+            {
 
+            }
         }
     }
 }
