@@ -49,7 +49,7 @@ namespace Lab01_AboutMeQuiz
         {
             if (!gotItRight)
             {
-                Console.WriteLine($"Wrong! The correct answer is {this.answers[idx]}");
+                Console.WriteLine($"Wrong. The correct answer is {this.answers[idx]}");
             }
             else
             {
