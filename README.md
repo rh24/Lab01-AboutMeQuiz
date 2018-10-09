@@ -6,6 +6,10 @@ This is a .NET Core Console Application written in C#. In the command prompt /or
 
 In order to open this program up on your local machine, fork and clone down the repo. On your Windows 10 machine, open up Visual Studio. In Visual Studio, start the app using Ctrl + F5. Start without debugging.
 
+## Version
+
+10/09/18 v1.0.0 
+
 ## Contributions
 
 Contributions, bug reports, and pull requests are welcome at https://github.com/rh24/Lab01-AboutMeQuiz.
